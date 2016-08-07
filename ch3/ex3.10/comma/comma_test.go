@@ -1,0 +1,22 @@
+package comma
+
+import (
+	"testing"
+)
+
+func TestComma(t *testing.T) {
+	cases := []struct {
+	in , want  string
+	}{
+		{"123","123" },
+		{"1234","1,234"},
+
+	}
+
+	for _, c :=  range cases {
+		got :=AddComma(c.in)
+		if got  != c.want {
+			t.Errorf("AddComma(%s) == %s , want %s", c.in , got , c.want)
+		}
+	}
+}
